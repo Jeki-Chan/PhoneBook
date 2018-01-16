@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
+    <script src="https://use.fontawesome.com/03ee1c02f0.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+</head>
+<body>
+<header>
+    <h1>Телефонная книга</h1>
+
+    <div class="search">
+        <input type="text" class="inpsearch" id="searchString" placeholder="Поиск контакта">
+        <button class="btnsearch" id="searchBtn"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button id="cleanBtn" class="cleaBtn">&times;</button>
+        <button id="showCreateModalBtn" class="adBtn">Добавить контакт</button>
+    </div>
+</header>
+
+
+    <div id="createModal" class="modal">
+
+        <div class="modal-content">
+            <h2 class="title clos">
+                <span class="cont">Добавление контакта</span>
+            </h2>
+            <span id="closeCreateIcon" class="close">&times;</span>
+            <input type="text" id="firstNameInput" placeholder="Имя"  maxlength="20"><br>
+            <input type="text" id="lastNameInput" placeholder="Фамилия"  maxlength="20"><br>
+            <input type="tel" id="phoneInput" placeholder="Телефон*"><br>
+            <input type="email" id="emailInput" placeholder="Email"><br>
+
+            <button id="createContactBtn" class="addBtn">Создать</button>
+        </div>
+
+    </div>
+
+    <div id="contactModal" class="modal">
+
+        <div class="modal-content editmodal">
+            <h2 class="title">
+                <span class="cont">Информация о контакте</span>
+            </h2>
+            <span id="closeContactIcon" class="close c">&times;</span>
+            <div class="fontf">
+                <div class="showw">Имя: </div><span id="firstNameShow"></span><br>
+                <div class="showw">Фамилия: </div><span id="lastNameShow"></span><br>
+                <div class="showw">Телефон: </div><span id="phoneShow"></span><br>
+                <div class="showw">Email: </div><span id="emailShow"></span><br>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="editModal" class="modal">
+
+        <div class="modal-content ed">
+            <h2 class="title clos ">
+                <span class="cont">Редактирование контакта</span>
+            </h2>
+            <span id="closeEditIcon" class="close">&times;</span>
+            <input type="text" id="firstNameEditInput" placeholder="Имя"><br>
+            <input type="text" id="lastNameEditInput" placeholder="Фамилия"><br>
+            <input type="text" id="phoneEditInput" placeholder="Телефон"><br>
+            <input type="text" id="emailEditInput" placeholder="Email"><br>
+            <input type="hidden" id="editId">
+
+            <button id="editContactBtn" class="addBtn">Сохранить</button>
+        </div>
+
+    </div>
+
+    <h2 class="title">
+        <hr class="left-hr">
+        <span class="cont">Контакты </span>
+        <hr class="right-hr">
+    </h2>
+
+        <ul id="list"></ul>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
