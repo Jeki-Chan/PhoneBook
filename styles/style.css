@@ -346,26 +346,39 @@ li button:last-child{
     }
 
 }
-@media screen and (max-width: 380px){
-    .search {
-        width: 185px;
-    }
-    .btnsearch {
-        left: 185px;
-    }
-
-}
-@media screen and (max-width: 380px){
+@media screen and (max-width: 320px){
     .search {
         width: 180px;
     }
     .btnsearch {
         left: 180px;
     }
+    hr.right-hr, hr.left-hr {
+        width: 16%;
+    }
     h1 {
         font-size: 25px;
     }
     .cleaBtn, .btnsearch {
         top: 42px;
+    }
+}
+@media screen and (max-width: 275px){
+    .cleaBtn, .btnsearch {
+        width: 25px;
+    }
+}
+@media screen and (max-width: 250px) {
+    hr.right-hr, hr.left-hr {
+        width: 12%;
+    }
+    .cleaBtn, .btnsearch {
+        top: 74px;
+    }
+    .search {
+        width: 155px;
+    }
+    .btnsearch {
+        left: 155px;
     }
 }
