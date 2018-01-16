@@ -6,8 +6,8 @@ const closeCreateIcon     = document.getElementById('closeCreateIcon');
 const closeContactIcon    = document.getElementById('closeContactIcon');
 const closeEditIcon       = document.getElementById('closeEditIcon');
 const showCreateModalBtn  = document.getElementById("showCreateModalBtn");
-const createContactBtn    = document.getElementById("createContactBtn");
-const editContactBtn      = document.getElementById("editContactBtn");
+const createContactForm   = document.getElementById("createContactForm");
+const editContactForm     = document.getElementById("editContactForm");
 const searchBtn           = document.getElementById("searchBtn");
 const searchString        = document.getElementById("searchString");
 const cleanBtn            = document.getElementById("cleanBtn");
@@ -41,7 +41,7 @@ function validateContact(data) {
 
 function initContact(data) {
   validateContact(data);
-  data.id = data.id || Date.now();
+  data.id = data.id || Date.now().toString();
   if (!(data.firstName || data.lastName)) {
     data.lastName = data.phone ? data.phone : data.email;
   }
@@ -91,7 +91,8 @@ function updateContact (id, data) {
   const oldPos = getIndexById(id);
   const raw = Object.assign({}, list[oldPos], data);
   const contact = initContact(raw);
-  if (isAlreadyExist(contact) && !confirmDupl()) return list;
+  const isNameChanged = getFullName(list[oldPos]) !== getFullName(contact);
+  if (isNameChanged && isAlreadyExist(contact) && !confirmDupl()) return false;
   removeContact(id);
   const newPos = sortedInsert(contact);
   save();
@@ -162,7 +163,7 @@ function showCreateModalBtnClick() {
   showModal(createModal);
 }
 
-function createContactBtnClick() {
+function createContactFormClick() {
   const toCreate = {
     firstName: firstNameInput.value,
     lastName: lastNameInput.value,
@@ -187,15 +188,16 @@ function searchContact(name) {
     .indexOf(name.toLowerCase()) !== -1);
 }
 
-function editContactBtnClick() {
+function editContactFormClick() {
   const toUpdate = {
     firstName: firstNameEditInput.value,
     lastName: lastNameEditInput.value,
     phone: phoneEditInput.value,
     email: emailEditInput.value,
   };
-  const { contact, oldPos, newPos } = updateContact(editId.value, toUpdate);
-  updateListView(contact, oldPos, newPos);
+  const result = updateContact(editId.value, toUpdate);
+  if (!result) return closeModal(editModal);
+  updateListView(result.contact, result.oldPos, result.newPos);
   closeModal(editModal);
 }
 
@@ -274,8 +276,8 @@ function removeFromListView(index) {
 }
 
 showCreateModalBtn.addEventListener('click', () => showCreateModalBtnClick());
-createContactBtn.addEventListener('click', () => createContactBtnClick());
-editContactBtn.addEventListener('click', () => editContactBtnClick());
+createContactForm.addEventListener('submit', () => createContactFormClick());
+editContactForm.addEventListener('submit', () => editContactFormClick());
 searchBtn.addEventListener('click', () => searchBtnClick());
 cleanBtn.addEventListener('click', () => cleanBtnClick());
 closeCreateIcon.addEventListener('click', () => closeModal(createModal));

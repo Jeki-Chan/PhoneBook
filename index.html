@@ -30,13 +30,15 @@
             <h2 class="title clos">
                 <span class="cont">Добавление контакта</span>
             </h2>
-            <span id="closeCreateIcon" class="close">&times;</span>
-            <input type="text" id="firstNameInput" placeholder="Имя"  maxlength="20"><br>
-            <input type="text" id="lastNameInput" placeholder="Фамилия"  maxlength="20"><br>
-            <input type="tel" id="phoneInput" placeholder="Телефон*"><br>
-            <input type="email" id="emailInput" placeholder="Email"><br>
+            <form action="#" id="createContactForm">
+                <span id="closeCreateIcon" class="close">&times;</span>
+                <input type="text" id="firstNameInput" placeholder="Имя"  maxlength="20"><br>
+                <input type="text" id="lastNameInput" placeholder="Фамилия"  maxlength="20"><br>
+                <input type="tel" id="phoneInput" placeholder="+XXX XX XXX XXXX" pattern="\+\d{3} \d{2} \d{3} \d{4}"><br>
+                <input type="email" id="emailInput" placeholder="Email"><br>
 
-            <button id="createContactBtn" class="addBtn">Создать</button>
+                <button class="addBtn">Создать</button>
+            </form>
         </div>
 
     </div>
@@ -64,14 +66,16 @@
             <h2 class="title clos ">
                 <span class="cont">Редактирование контакта</span>
             </h2>
-            <span id="closeEditIcon" class="close">&times;</span>
-            <input type="text" id="firstNameEditInput" placeholder="Имя"><br>
-            <input type="text" id="lastNameEditInput" placeholder="Фамилия"><br>
-            <input type="text" id="phoneEditInput" placeholder="Телефон"><br>
-            <input type="text" id="emailEditInput" placeholder="Email"><br>
-            <input type="hidden" id="editId">
+            <form action="#" id="editContactForm">
+                <span id="closeEditIcon" class="close">&times;</span>
+                <input type="text" id="firstNameEditInput" placeholder="Имя"><br>
+                <input type="text" id="lastNameEditInput" placeholder="Фамилия"><br>
+                <input type="tel" id="phoneEditInput" placeholder="+XXX XX XXX XXXX" pattern="\+\d{3} \d{2} \d{3} \d{4}"><br>
+                <input type="email" id="emailEditInput" placeholder="Email"><br>
+                <input type="hidden" id="editId">
 
-            <button id="editContactBtn" class="addBtn">Сохранить</button>
+                <button class="addBtn">Сохранить</button>
+            </form>
         </div>
 
     </div>

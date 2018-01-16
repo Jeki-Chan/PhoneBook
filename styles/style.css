@@ -214,3 +214,158 @@ li button:last-child{
     border-radius: 0 5px 5px 0;
     border-left: 0;
 }
+@media screen and (max-width: 1165px) {
+    .adBtn {
+        left: 450px;
+    }
+    hr.right-hr,
+    hr.left-hr {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .adBtn {
+        left: 375px;
+    }
+    .search{
+         width: 250px;
+     }
+    .btnsearch{
+        left: 250px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    hr.right-hr,
+    hr.left-hr {
+        width: 38%;
+    }
+}
+@media screen and (max-width: 830px) {
+    .adBtn {
+        left: 340px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .adBtn {
+        left: 340px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    hr.right-hr,
+    hr.left-hr {
+        width: 36%;
+    }
+}
+@media screen and (max-width: 763px) {
+    .cleaBtn,
+    .btnsearch{
+        top: 43px;
+    }
+    .inpsearch{
+        margin: 5px;
+    }
+    .adBtn {
+        left: 270px;
+    }
+}
+@media screen and (max-width: 660px) {
+    hr.right-hr,
+    hr.left-hr {
+        width: 34%;
+    }
+    .adBtn {
+        left: 270px;
+    }
+}
+@media screen and (max-width: 660px) {
+    .adBtn {
+        width: 145px;
+        left: 250px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .cleaBtn, .btnsearch {
+        top: 41px;
+    }
+}
+@media screen and (max-width: 543px) {
+    .adBtn {
+        position: inherit;
+        left: 0;
+    }
+    header {
+        height: 100%;
+        margin: 36px 0 0 25%
+    }
+    .inpsearch {
+        margin: 10px 0;
+    }
+    .search {
+        width: 235px;
+        margin:0;
+    }
+    hr.right-hr,
+    hr.left-hr {
+        width: 30%;
+    }
+    .cleaBtn,
+    .btnsearch{
+        top: 46px;
+    }
+    .btnsearch {
+        left: 235px;
+    }
+}
+@media screen and (max-width: 480px) {
+    header {
+        height: 100%;
+        margin: 36px 0 0 19%
+    }
+    hr.right-hr,
+    hr.left-hr {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 380px) {
+    header {
+        height: 100%;
+        margin: 36px 0 0 12%
+    }
+    hr.right-hr,
+    hr.left-hr {
+        width: 22%;
+    }
+    .search {
+        width: 210px;
+    }
+    .btnsearch {
+        left: 205px;
+    }
+
+}
+@media screen and (max-width: 380px){
+    .search {
+        width: 185px;
+    }
+    .btnsearch {
+        left: 185px;
+    }
+
+}
+@media screen and (max-width: 380px){
+    .search {
+        width: 180px;
+    }
+    .btnsearch {
+        left: 180px;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    .cleaBtn, .btnsearch {
+        top: 42px;
+    }
+}
